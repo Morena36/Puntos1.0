@@ -6,7 +6,9 @@ on:
 jobs:
   Run_Bot:
     runs-on: ubuntu-latest
+    
     timeout-minutes: 45 # Limit the time of the bot
+    
     steps:
       - uses: actions/checkout@v3.5.2
       - name: Set up Python
