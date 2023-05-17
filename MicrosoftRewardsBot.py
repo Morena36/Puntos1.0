@@ -1330,10 +1330,6 @@ def createMessage():
 def sendReportToMessenger(message):
     webhook = DiscordWebhook(url=ARGS.discord[0], rate_limit_retry=True, content=message)
     response = webhook.execute()
-    if response.status_code == 204:
-        prGreen("[LOGS] Report sent to Discord.\n")
-    else:
-        prRed("[ERROR] Could not send report to Discord.\n")
 
 def prRed(prt):
     print(f"\033[91m{prt}\033[00m")
