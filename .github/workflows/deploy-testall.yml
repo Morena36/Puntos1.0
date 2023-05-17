@@ -8,10 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45 # Limit the time of the bot
     steps:
-      - name: Check Public IP
-        uses: haythem/public-ip@master
-      - name: checkout
-        uses: actions/checkout@main
       - uses: actions/checkout@v3.4.0
       - name: Set up Python
         uses: actions/setup-python@v4.5.0
