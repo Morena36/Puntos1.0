@@ -7,7 +7,7 @@ jobs:
   Run_Bot:
     runs-on: ubuntu-latest
     
-    timeout-minutes: 45 # Limit the time of the bot
+    timeout-minutes: 59 # Limit the time of the bot
     
     steps:
       - uses: actions/checkout@v3.5.2
@@ -22,8 +22,9 @@ jobs:
           pip install -r requirements.txt
       - name: Run Script KEYS2 TO KEYS6
         run: |
-          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS2 }} --headless --fast --discord ${{ secrets.webhook }} --privacy --wfd ${{ github.workflow }}
-          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS3 }} --headless --fast --discord ${{ secrets.webhook }} --privacy
-          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS4 }} --headless --fast --discord ${{ secrets.webhook }} --privacy
-          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS5 }} --headless --fast --discord ${{ secrets.webhook }} --privacy
-          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS6 }} --headless --fast --discord ${{ secrets.webhook }} --privacy
+          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS2 }} --headless --fast --discord ${{ secrets.webhook }} --privacy --wfd ${{ github.workflow }} &
+          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS3 }} --headless --fast --discord ${{ secrets.webhook }} --privacy &
+          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS4 }} --headless --fast --discord ${{ secrets.webhook }} --privacy &
+          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS5 }} --headless --fast --discord ${{ secrets.webhook }} --privacy &
+          timeout 2700 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS6 }} --headless --fast --discord ${{ secrets.webhook }} --privacy 
+          wait
