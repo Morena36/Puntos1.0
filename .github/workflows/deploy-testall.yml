@@ -54,7 +54,7 @@ jobs:
 
           for account in $ACCOUNTS; do
 
-            python MicrosoftRewardsBot.py --accounts ${{ secrets.$account }} --headless --fast --discord ${{ secrets.webhook }} --privacy &
+            python MicrosoftRewardsBot.py --accounts ${{ secrets[account] }} --headless --fast --discord ${{ secrets.webhook }} --privacy &
 
             sleep 2
 
