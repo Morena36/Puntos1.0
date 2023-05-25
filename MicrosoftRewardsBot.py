@@ -65,6 +65,7 @@ def browserSetup(isMobile: bool, user_agent: str = PC_USER_AGENT, proxy: str = N
     options.add_argument('lang=' + LANG.split("-")[0])
     options.add_argument('--disable-blink-features=AutomationControlled')
     prefs = {"profile.default_content_setting_values.geolocation": 2,
+            "profile.managed_default_content_settings.images": 2,
             "credentials_enable_service": False,
             "profile.password_manager_enabled": False,
             "webrtc.ip_handling_policy": "disable_non_proxied_udp",
