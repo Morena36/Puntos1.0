@@ -24,4 +24,5 @@ jobs:
         run: |
           python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS1 }} --headless --fast --discord ${{ secrets.webhook }} --privacy & sleep 3
           python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS2 }} --headless --fast --discord ${{ secrets.webhook }} --privacy & sleep 3
+          python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS3 }} --headless --fast --discord ${{ secrets.webhook }} --privacy & sleep 3
           wait
