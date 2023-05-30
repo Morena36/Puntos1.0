@@ -3,6 +3,7 @@ chardet
 idna
 requests
 selenium
+selenium-stealth
 urllib3
 ipapi
 func_timeout
