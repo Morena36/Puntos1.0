@@ -39,7 +39,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from selenium.webdriver.remote.webelement import WebElement
 from typing import List, Union
-from typing_extensions import Literal
+#from typing_extensions import Literal
 
 import urllib.parse
 from discord_webhook import DiscordWebhook
