@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     
-    timeout-minutes: 45 # Limit the time of the bot
+    timeout-minutes: 59 # Limit the time of the bot
     
     steps:
       - uses: actions/checkout@v3.5.2
@@ -21,7 +21,7 @@ jobs:
           sudo apt-get install -y xvfb
           pip install -r requirements.txt
       - name: Run Script
-        run: timeout 5400 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS1 }} --headless --fast --discord ${{ secrets.webhook }} --privacy --wfd ${{ github.workflow }}
+        run: timeout 5400 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS1 }} --headless --fast --discord ${{ secrets.webhook }} --privacy
       - name: Retry
         if: ${{ failure() }}
         run: timeout 3600 python MicrosoftRewardsBot.py --accounts ${{ secrets.KEYS1 }} --headless --fast --privacy --wfd ${{ github.workflow }}
